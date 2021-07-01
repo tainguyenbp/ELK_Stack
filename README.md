@@ -1,11 +1,10 @@
 # elk
 # Elasticsearch version 7
 Download repo from git
-
 > git clone https://github.com/tainguyenbp/elk.git<br>
+
+Run file bash start docker compose with three es
 > cd elk<br>
-* Run file bash start docker compose with three es<br>
-Run command execute script install kubernetes master
 > bash run_elk_docker_compose.sh<br>
 
 Testing Elasticsearch
