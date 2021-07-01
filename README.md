@@ -1,14 +1,14 @@
 # elk
 # Elasticsearch version 7
 Download repo from git
-* Download repo from git<br>
+
 > git clone https://github.com/tainguyenbp/elk.git<br>
 > cd elk<br>
 * Run file bash start docker compose with three es<br>
-* run command execute script install kubernetes master<br>
+Run command execute script install kubernetes master
 > bash run_elk_docker_compose.sh<br>
 
-* Testing Elasticsearch<br>
+Testing Elasticsearch
 > root@docker-elk:/home/sysadmin/elk# curl http://127.0.0.1:9200/_cluster/health?pretty<br>
 > {<br>
 >   "cluster_name" : "es-docker-cluster",<br>
