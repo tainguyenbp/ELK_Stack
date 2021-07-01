@@ -26,3 +26,12 @@ Testing Elasticsearch
 >   "task_max_waiting_in_queue_millis" : 0,<br>
 >   "active_shards_percent_as_number" : 100.0<br>
 > }<br>
+
+Ingest a document to elasticsearch:
+root@docker-elk:/home/sysadmin/elk# curl -H "Content-Type: application/json" -XPUT http://127.0.0.1:9200/test/docs/1 -d '{"name": "tainguyenbp"}'
+{"_index":"test","_type":"docs","_id":"1","_version":1,"result":"created","_shards":{"total":2,"successful":2,"failed":0},"_seq_no":0,"_primary_term":1}
+
+View the indices:
+root@docker-elk:/home/sysadmin/elk# curl http://127.0.0.1:9200/_cat/indices?v
+health status index uuid                   pri rep docs.count docs.deleted store.size pri.store.size
+green  open   test  ogdfWsbsTYqc3s8wISRGgA   1   1          0            0       416b           208b
