@@ -9,7 +9,7 @@ Download repo from git
 > bash run_elk_docker_compose.sh<br>
 
 * Testing Elasticsearch<br>
-> root@master01:/home/sysadmin/elk# curl http://127.0.0.1:9200/_cluster/health?pretty<br>
+> root@docker-elk:/home/sysadmin/elk# curl http://127.0.0.1:9200/_cluster/health?pretty<br>
 > {<br>
 >   "cluster_name" : "es-docker-cluster",<br>
 >   "status" : "green",<br>
