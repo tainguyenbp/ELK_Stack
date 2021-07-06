@@ -53,3 +53,4 @@ EOF
   systemctl enable elasticsearch
   
 readlink -f etcd.yam
+##Install filebeat
