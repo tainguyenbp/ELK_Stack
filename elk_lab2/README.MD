@@ -59,3 +59,4 @@ readlink -f etcd.yam
 filebeat_clear=`grep -v "#" /etc/filebeat/filebeat.yml | grep -v "^$"`
 echo "$filebeat_clear" > /etc/filebeat/filebeat.yml
 
+filebeat modules enable nginx
