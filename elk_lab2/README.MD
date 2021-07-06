@@ -11,6 +11,7 @@ cat <<EOF > /etc/elasticsearch/elasticsearch.yml
 cluster.name: tainn-cluster
 node.name: node-1
 node.data: true
+node.master: true
 path.data: /data
 path.logs: /var/log/elasticsearch
 network.host: 10.xx.xx.xx
@@ -25,6 +26,7 @@ cat <<EOF > /etc/elasticsearch/elasticsearch.yml
 cluster.name: tainn-cluster
 node.name: node-2
 node.data: true
+node.master: true
 path.data: /data
 path.logs: /var/log/elasticsearch
 network.host: 10.xx.xx.xx
@@ -39,6 +41,7 @@ cat <<EOF > /etc/elasticsearch/elasticsearch.yml
 cluster.name: tainn-cluster
 node.name: node-3
 node.data: true
+node.master: true  
 path.data: /data
 path.logs: /var/log/elasticsearch
 network.host: 10.xx.xx.xx
