@@ -60,5 +60,12 @@ filebeat_clear=`grep -v "#" /etc/filebeat/filebeat.yml | grep -v "^$"`
 echo "$filebeat_clear" > /etc/filebeat/filebeat.yml
 
 filebeat modules enable nginx
-  
+
+**List indexin Elasticsearch cluster:**
 curl -XGET http://<IP>:9200/_cat/indices
+
+**Search(~ query) all data:**
+curl -X GET "http://<IP>:9200/<index_name>/_search?pretty" -H 'Content-Type: application/json' -d'{"query": {"match_all": {}}}'
+  
+**Get documentby id:**
+curl -XGET http://<IP>:9200/<index_name>/_doc/<_id>?prettycurl -XGET http://<IP>:9200/<index_name>/_doc/<_id>
