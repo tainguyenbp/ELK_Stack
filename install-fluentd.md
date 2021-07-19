@@ -15,3 +15,6 @@ $ sudo gem update
 ### To use the installed Ruby/Rubygems, open a new terminal. Then check the version of installed Ruby and Rubygems as follows.
 $ ruby --version
 $ rubygems --version
+
+
+grep -v "#" /etc/td-agent/td-agent.conf | grep -v "^$"
