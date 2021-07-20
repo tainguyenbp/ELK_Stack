@@ -47,3 +47,6 @@ template(name="template1" type="list") {
 template(name="template2" type="string"
     string="%TIMESTAMP:::date-rfc3339% %HOSTNAME% %syslogtag%%msg:::sp-if-no-1st-sp%%msg:::drop-last-lf%\n"
 )
+
+##### Templates #####
+$template TraditionalFormatWithPRIText,"%pri-text%: %timegenerated% %HOSTNAME% %syslogtag%%msg:::drop-last-lf%\n"
