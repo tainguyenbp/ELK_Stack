@@ -10,3 +10,8 @@ local7.*  /var/log/nginx/nginx-rsyslog-local.log
 rsyslogd -N1 => validate config
 
 systemctl restart rsyslog
+
+
+### Nginx logs to remote syslog
+access_log syslog:server=10.125.40.29:514,facility=local7,tag=nginx,severity=info;
+error_log syslog:server=10.125.40.29:514,facility=local7,tag=nginx,severity=error;
