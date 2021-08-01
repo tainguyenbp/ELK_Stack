@@ -104,3 +104,19 @@ sudo systemctl start logstash.service
 sudo systemctl stop logstash.service
 
 ````
+### Configurage Logstash
+```
+/usr/share/logstash/bin/logstash-plugin install logstash-codec-sflow
+
+/usr/share/logstash/bin/logstash-plugin update
+
+
+```
+### Configurage Logstash file logstash.yml
+```
+```
+
+### Configurage Logstash file pipelines.yml
+```
+```
+
