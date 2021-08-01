@@ -74,6 +74,12 @@ sudo systemctl stop kibana.service
 
 ### Install Logstash
 ```
+
+Logstash requires Java 8 or Java 11. Use the official Oracle distribution or an open-source distribution such as OpenJDK.
+
+sudo apt install openjdk-8-jdk openjdk-8-jre
+java -version
+
 Installing from Package Repositories
 APT
 Download and install the Public Signing Key:
