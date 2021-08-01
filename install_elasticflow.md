@@ -87,7 +87,14 @@ sudo apt-get install apt-transport-https
 Save the repository definition to /etc/apt/sources.list.d/elastic-7.x.list:
 
 echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
-sudo apt-get update && sudo apt-get install logstash=7.8.1
+sudo apt-get update && sudo apt-get install logstash=7.8.1-amd64
 
+wget https://artifacts.elastic.co/downloads/logstash/logstash-7.8.1.deb
+shasum -a 512 -c logstash-7.8.1.deb.sha512
+sudo dpkg -i logstash-7.8.1.deb
+
+sudo systemctl enable logstash.service
+sudo systemctl start logstash.service
+sudo systemctl stop logstash.service
 
 ````
