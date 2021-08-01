@@ -1,4 +1,4 @@
-### install with package
+### Install Elasticsearch
 
 ```
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
@@ -24,4 +24,70 @@ shasum -a 512 -c elasticsearch-7.8.1-amd64.deb.sha512
 
 sudo dpkg -i elasticsearch-7.8.1-amd64.deb
 
+sudo systemctl enable elasticsearch.service
+sudo systemctl start elasticsearch.service
+sudo systemctl stop elasticsearch.service
+
 ```
+### Configurage Elasticsearch
+
+```
+
+```
+
+### Install Kibana
+
+```
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+Install from the APT repository
+You may need to install the apt-transport-https package on Debian before proceeding:
+
+sudo apt-get install apt-transport-https
+
+Save the repository definition to /etc/apt/sources.list.d/elastic-7.x.list:
+
+echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+echo "deb https://artifacts.elastic.co/packages/oss-7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+
+sudo apt-get update && sudo apt-get install kibana=7.8.1
+
+Download and install the Debian package manually
+The Debian package for Kibana v7.8.1 can be downloaded from the website and installed as follows:
+
+wget https://artifacts.elastic.co/downloads/kibana/kibana-7.8.1-amd64.deb
+shasum -a 512 kibana-7.8.1-amd64.deb 
+sudo dpkg -i kibana-7.8.1-amd64.deb
+
+sudo systemctl enable kibana.service
+sudo systemctl start kibana.service
+sudo systemctl stop kibana.service
+
+
+```
+
+### Configurage Kibana
+
+```
+
+```
+
+
+### Install Logstash
+```
+Installing from Package Repositories
+APT
+Download and install the Public Signing Key:
+
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+
+You may need to install the apt-transport-https package on Debian before proceeding:
+
+sudo apt-get install apt-transport-https
+
+Save the repository definition to /etc/apt/sources.list.d/elastic-7.x.list:
+
+echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+sudo apt-get update && sudo apt-get install logstash=7.8.1
+
+
+````
