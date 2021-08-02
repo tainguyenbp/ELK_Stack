@@ -120,3 +120,14 @@ sudo systemctl stop logstash.service
 ```
 ```
 
+```
+URL1
+wget https://git.io/GeoLite2-ASN.mmdb
+wget https://git.io/GeoLite2-City.mmdb  
+wget
+
+URL2
+wget  
+wget 
+wget 
+```
