@@ -110,14 +110,30 @@ sudo systemctl stop logstash.service
 
 /usr/share/logstash/bin/logstash-plugin update
 
+sudo /usr/share/logstash/bin/logstash-plugin install logstash-codec-sflow
+sudo /usr/share/logstash/bin/logstash-plugin update logstash-codec-netflow
+sudo /usr/share/logstash/bin/logstash-plugin update logstash-input-udp
+sudo /usr/share/logstash/bin/logstash-plugin update logstash-input-tcp
+sudo /usr/share/logstash/bin/logstash-plugin update logstash-filter-dns
+sudo /usr/share/logstash/bin/logstash-plugin update logstash-filter-geoip
+sudo /usr/share/logstash/bin/logstash-plugin update logstash-filter-translate
 
+sudo wget https://github.com/robcowart/elastiflow/archive/v4.0.0-beta1.tar.gz
+tar xzvf v4.0.0-beta1.tar.gz
+cp -a elastiflow-4.0.0-beta1/logstash.service.d/. /etc/systemd/system/logstash.service.d/
+
+cp -a elastiflow-4.0.0-beta1/logstash/elastiflow/. /etc/logstash/elastiflow
 ```
 ### Configurage Logstash file logstash.yml
 ```
+
 ```
 
 ### Configurage Logstash file pipelines.yml
 ```
+vim /etc/logstash/pipelines.yml
+- pipeline.id: elastiflow
+  path.config: "/etc/logstash/elastiflow/conf.d/*.conf"
 ```
 
 ```
@@ -130,4 +146,9 @@ URL2
 wget  
 wget 
 wget 
+```
+### Restart the Logstash Service
+```
+systemctl daemon-reload
+systemctl restart logstash
 ```
