@@ -149,7 +149,7 @@ wget
 wget 
 ```
 
-###
+### enable only netflow logstash configuration
 ```
 cd /etc/logstash/elastiflow/conf.d/
 mv 10_input_ipfix_ipv4.logstash.conf.disabled 10_input_ipfix_ipv4.logstash.conf
@@ -162,4 +162,15 @@ mv 30_output_20_multi.logstash.conf.disabled 30_output_20_multi.logstash.conf
 /usr/share/logstash/bin/system-install
 systemctl daemon-reload
 systemctl restart logstash
+```
+
+### Tune Linux for improved UDP Throughput
+```
+Add below line at the end of file in /etc/sysctl.conf
+vim /etc/sysctl.conf
+
+net.core.rmem_max=33554432
+
+sysctl -p
+
 ```
