@@ -174,3 +174,15 @@ net.core.rmem_max=33554432
 sysctl -p
 
 ```
+
+### Import ElastiFlow Dashboard in KibanaPermalink
+```
+# find template dashboard elastiflow.kibana.7.8.x.ndjson
+cd elastiflow-4.0.1/kibana/
+ls -lah
+
+# Copy dashboard kibana to desktop and select import dashboard template elastiflow.kibana.7.8.x.ndjson via kiabana
+Management > Kibana Section > Saved Objects > Import
+
+
+```
