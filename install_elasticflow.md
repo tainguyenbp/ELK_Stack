@@ -148,8 +148,18 @@ wget
 wget 
 wget 
 ```
+
+###
+```
+cd /etc/logstash/elastiflow/conf.d/
+mv 10_input_ipfix_ipv4.logstash.conf.disabled 10_input_ipfix_ipv4.logstash.conf
+mv 30_output_10_single.logstash.conf 30_output_10_single.logstash.conf.disabled
+mv 30_output_20_multi.logstash.conf.disabled 30_output_20_multi.logstash.conf
+```
+
 ### Restart the Logstash Service
 ```
+/usr/share/logstash/bin/system-install
 systemctl daemon-reload
 systemctl restart logstash
 ```
