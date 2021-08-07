@@ -118,15 +118,15 @@ sudo /usr/share/logstash/bin/logstash-plugin update logstash-filter-dns
 sudo /usr/share/logstash/bin/logstash-plugin update logstash-filter-geoip
 sudo /usr/share/logstash/bin/logstash-plugin update logstash-filter-translate
 
-sudo wget https://github.com/robcowart/elastiflow/archive/v4.0.0-beta1.tar.gz
-tar xzvf v4.0.0-beta1.tar.gz
-cp -a elastiflow-4.0.0-beta1/logstash.service.d/. /etc/systemd/system/logstash.service.d/
+sudo wget https://github.com/robcowart/elastiflow/archive/refs/tags/v4.0.1.tar.gz
+tar xzvf v4.0.1.tar.gz
+cp -a elastiflow-4.0.1/logstash.service.d/. /etc/systemd/system/logstash.service.d/
+cp -a elastiflow-4.0.1/logstash/elastiflow/. /etc/logstash/elastiflow
 
-cp -a elastiflow-4.0.0-beta1/logstash/elastiflow/. /etc/logstash/elastiflow
 ```
 ### Configurage Logstash file logstash.yml
 ```
-
+comment all config logstash
 ```
 
 ### Configurage Logstash file pipelines.yml
@@ -136,6 +136,7 @@ vim /etc/logstash/pipelines.yml
   path.config: "/etc/logstash/elastiflow/conf.d/*.conf"
 ```
 
+### Update GeoLite2-City and GeoLite2-Coutry
 ```
 URL1
 wget https://git.io/GeoLite2-ASN.mmdb
