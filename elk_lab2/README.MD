@@ -54,11 +54,13 @@ EOF
   
 readlink -f etcd.yam
   
-##Install filebeat
-  
+### Install filebeat
+```
+grep -v "#" /etc/filebeat/filebeat.yml | grep -v "^$"
 filebeat_clear=`grep -v "#" /etc/filebeat/filebeat.yml | grep -v "^$"`
 echo "$filebeat_clear" > /etc/filebeat/filebeat.yml
-
+```
+  
 filebeat modules enable nginx
 
 **List indexin Elasticsearch cluster:**
