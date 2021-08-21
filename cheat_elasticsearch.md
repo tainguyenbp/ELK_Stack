@@ -17,7 +17,8 @@ yellow open   elastiflow-4.0.1-2020.06.18 A-1ctEPfTAWmcJWrAYPLYQ   3   1     156
 yellow open   elastiflow-4.0.1-2020.06.19 AQpYJ9-7TJmWlYGHRwJvRg   3   1     170568            0     66.8mb         66.8mb
 yellow open   elastiflow-4.0.1-2020.06.09 Y2vjdoNAQOaQkSYZYlsxKQ   3   1      71881            0     29.1mb         29.1mb
 ```
-### delete one index
+### delete one index and recheck
 ```
-curl -XDELETE http://elasticsearch:9200/elastiflow-4.0.1-2020.06.09
+curl -XDELETE http://127.0.0.1:9200/elastiflow-4.0.1-2020.06.09
+curl -XGET http://127.0.0.1:9200/_cat/indices?v
 ```
