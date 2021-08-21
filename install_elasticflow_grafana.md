@@ -185,5 +185,8 @@ ls -lah
 Management > Kibana Section > Saved Objects > Import
 
 ```
+# Issue
+### clear index Elasticsearch
+```
 
-
+```
