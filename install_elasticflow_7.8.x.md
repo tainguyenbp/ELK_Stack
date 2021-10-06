@@ -185,7 +185,16 @@ ls -lah
 Management > Kibana Section > Saved Objects > Import
 
 ```
+
+# Issue
+```
+Elasticsearch::Transport::Transport::Errors::Forbidden: [403] {"error":{"root_cause":[{"type":"cluster_block_exception","reason":"blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];"}],"type":"cluster_block_exception","reason":"blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];"},"status":403}
+Then you can fix it by running the following commands:
+curl -XPUT -H "Content-Type: application/json" http://localhost:9200/_cluster/settings -d '{ "transient": { "cluster.routing.allocation.disk.threshold_enabled": false } }'
+curl -XPUT -H "Content-Type: application/json" http://localhost:9200/_all/_settings -d '{"index.blocks.read_only_allow_delete": null}'
+```
 # Reference
 ```
+
 https://github.com/ahmedjama/ansible-elastiflow-docker
 ```
