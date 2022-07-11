@@ -1,4 +1,4 @@
-###1. pipeline logstash filebeat + fluentd -> logstash <pipeline> -> elasticsearch
+# 1. pipeline logstash filebeat + fluentd -> logstash <pipeline> -> elasticsearch
 ```
 input {
   filebeats {
